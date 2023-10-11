@@ -1,5 +1,5 @@
 class Car {
-    public int gasolineGauge;
+    private int gasolineGauge;
 
     public Car(int gasolineGauge)
     {
@@ -12,7 +12,7 @@ class Car {
 }
 
 class HybridCar extends Car {  
-    public double electricGauge;
+    private double electricGauge;
 
     public HybridCar(int gasolineGauge, double electricGauge)
     {
@@ -21,13 +21,13 @@ class HybridCar extends Car {
     }
     public void showCurrentGauge()
     {
-        System.out.println("잔여 가솔린:"+gasolineGauge);
+        super.showCurrentGauge();
         System.out.println("잔여 전기량:"+electricGauge);
     }
 }
 
 class HybridWaterCar extends HybridCar {   
-    public int waterGauge;
+    private int waterGauge;
     public HybridWaterCar(double electricGauge, int waterGauge)
     {
         super(0, electricGauge);
@@ -40,8 +40,7 @@ class HybridWaterCar extends HybridCar {
     }
     public void showCurrentGauge()
     {
-        System.out.println("잔여 가솔린:"+gasolineGauge);
-        System.out.println("잔여 전기량:"+electricGauge);
+        super.showCurrentGauge();
         System.out.println("잔여 워터량:"+waterGauge);
     }
 }
