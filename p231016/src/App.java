@@ -42,7 +42,7 @@ class OneCard extends Card
     }
 }
 
-class uno extends OneCard
+class uno extends Card
 {
     private String type;
     private String number;
