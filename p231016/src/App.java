@@ -42,7 +42,7 @@ class OneCard extends Card
     }
 }
 
-class uno extends OneCard
+class uno extends Card
 {
     private String type;
     private String number;
@@ -65,17 +65,29 @@ class uno extends OneCard
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Card card = new Card();
-        OneCard oneCard = new OneCard();
-        uno uno = new uno();
+        Card card1 = new Card();
+        Card card2 = new Card();
+        Card card3 = new Card();
+        OneCard oneCard1 = new OneCard();
+        OneCard oneCard2 = new OneCard();
+        OneCard oneCard3 = new OneCard();
+        uno uno1 = new uno();
+        uno uno2 = new uno();
+        uno uno3 = new uno();
 
-        Card deck[] = new Card[3];
+        Card deck[] = new Card[9];
 
-        deck[0] = card;
-        deck[1] = oneCard;
-        deck[2] = uno;
-
-        for(int i=0;i<3;i++)
+        deck[0] = card1;
+        deck[1] = card2;
+        deck[2] = card3;
+        deck[3] = oneCard1;
+        deck[4] = oneCard2;
+        deck[5] = oneCard3;
+        deck[6] = uno1;
+        deck[7] = uno2;
+        deck[8] = uno3;
+        
+        for(int i=0;i<9;i++)
         {
             deck[i].showCard();
         }
