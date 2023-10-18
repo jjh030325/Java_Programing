@@ -24,41 +24,23 @@ class Car{
         if(leftfront.returnlife()==0)
         {
             System.out.println("왼쪽 앞바퀴 펑크");
-            leftfront = change(leftfront);
+            leftfront = leftfront.change();
         }
         if(rightfront.returnlife()==0)
         {
             System.out.println("오른쪽 앞바퀴 펑크");
-            rightfront = change(rightfront);
+            rightfront = rightfront.change();
         }
         if(leftback.returnlife()==0)
         {
             System.out.println("왼쪽 뒷바퀴 펑크");
-            leftback = change(leftback);
+            leftback = leftback.change();
         }
         if(rightback.returnlife()==0)
         {
             System.out.println("오른쪽 뒷바퀴 펑크");
-            rightback = change(rightback);
+            rightback = rightback.change();
         }
-    }
-    public HankookTire change(Tire tire)
-    {
-        System.out.print(tire.returnWhere());
-        System.out.println("Tire를 HankookTire로 교체");
-        return new HankookTire(5, tire.returnWhere());
-    }
-    public gumoTire change(HankookTire hankookTire)
-    {
-        System.out.print(hankookTire.returnWhere());
-        System.out.println("HankookTire를 gumoTire로 교체");
-        return new gumoTire(10, hankookTire.returnWhere());
-    }
-    public gumoTire change(gumoTire gumoTire)
-    {
-        System.out.print(gumoTire.returnWhere());
-        System.out.println("gumoTire를 gumoTire로 교체");
-        return new gumoTire(10, gumoTire.returnWhere());
     }
 }
 class Tire{
@@ -87,6 +69,12 @@ class Tire{
     {
         return where;
     }
+    public Tire change()
+    {
+        System.out.print(returnWhere());
+        System.out.println("Tire를 HankookTire로 교체");
+        return new HankookTire(5, returnWhere());
+    }
 }
 class HankookTire extends Tire{
     HankookTire(int life, String where)
@@ -94,12 +82,27 @@ class HankookTire extends Tire{
         super(life, where);
         this.name = "HankookTire";
     }
+    
+    @Override
+    public gumoTire change()
+    {
+        System.out.print(returnWhere());
+        System.out.println("HankookTire를 gumoTire로 교체");
+        return new gumoTire(10, returnWhere());
+    }
 }
 class gumoTire extends Tire{
     gumoTire(int life, String where)
     {
         super(life, where);
         this.name = "gumoTire";
+    }
+
+    public gumoTire change()
+    {
+        System.out.print(returnWhere());
+        System.out.println("gumoTire를 gumoTire로 교체");
+        return new gumoTire(10, returnWhere());
     }
 }
 public class App {
