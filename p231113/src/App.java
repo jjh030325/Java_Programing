@@ -41,11 +41,11 @@ class PrinrterGeneric<T>{
 public class App {
     public static <T> void PrintArray(T[] arr)
     {
-        for(int i=0;i<arr.length;i++)
+        for(int i=0;i<arr.length - 1;i++)
         {
             System.out.print(arr[i] + ", ");
         }
-        System.out.println();
+        System.out.println(arr[arr.length - 1]);
     }
     public static void main(String[] args) throws Exception {
         //1번
