@@ -50,6 +50,16 @@ class MemberTreeMapSet
     {
         map.remove(id);
     }
+    public void search(int id)
+    {
+        if(map.get(id) != null)
+        {
+            System.out.println(id + " = " + map.get(id));
+        }else{
+            System.out.println(id + "는 존재하지 않습니다.");
+        }
+        
+    }
     public void print()
     {
         Set<Integer> ks = map.keySet();
@@ -75,7 +85,9 @@ public class App {
 
         memberTreeSet.print();
 
+        memberTreeSet.search(1);
         memberTreeSet.delete(1);
+        memberTreeSet.search(1);
 
         memberTreeSet.print();
     }
